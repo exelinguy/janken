@@ -164,6 +164,11 @@ p {
     margin:0;
 }
 
+#overallWinnerMessage {
+    font-weight: 800;
+    font-size: 20px;
+}
+
 #resetBtn {
     margin-bottom: 40px;
 }

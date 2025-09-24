@@ -72,8 +72,11 @@ const Game = (function() {
     if (roundNumber >= maxRounds) {
       gameActive = false;
       select.disabled = true;
-      // Clear previous round result message
-    roundResultMessage.textContent = "";
+      // Clear previous round result messages and play round button
+      playRoundBtn.style.display = 'none';
+      computerMessage.textContent = "";
+      playerMessage.textContent = "";
+      roundResultMessage.textContent = "";
       // Declare overall winner
       if (playerTotalScore > computerTotalScore) {
         overallWinnerMessage.textContent = '🎉 You are the overall winner! 🎉';
