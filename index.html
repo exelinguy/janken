@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Janken Game</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Janken" width="128px">
+        <div class="title">Janken</div>
+    </header>
+    <main class="content-wrap">
+    <div class="input-container">
+        <label for="rowInput">Enter number of rounds (1-10):</label>
+        <input type="number" id="rowInput" min="1" max="10" placeholder="5" required>
+        <button id="startBtn">Play !</button>
+        <div class="error" id="errorMsg"></div>
+    </div>
+    <div id="gameArea">
+      <label for="playerChoice">Make your choice:</label>
+      <select id="playerChoice" name="playerChoice" required>
+        <option value="">Please Select...</option>
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+      <button id="playRoundBtn">Play Round</button>
+      <p id="playerChoiceMessage">
+        <!-- Player choice will be shown here dynamically -->
+      </p>
+      <p id="computerChoiceMessage">
+        <!-- Computer choice will be shown here dynamically -->
+      </p>
+      <p id="roundResultMessage">
+        <!-- Shows the result of the current round -->
+      </p>
+      <p id="overallWinnerMessage">
+        <!-- Shows the overall winner -->
+      </p>
+    </div>
+  <div class="scoreTable">
+        <table id="scoreTable">
+          <thead>
+            <tr>
+              <th>Round No.</th>
+              <th>Player</th>
+              <th>Computer</th>
+              <th>Player Score</th>
+              <th>Computer Score</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Score rows will be added here dynamically -->
+          </tbody>
+          <tfoot>
+            <tr class="total-row">
+              <td>Total</td>
+              <td colspan="2"></td>
+              <td id="playerTotal">0</td>
+              <td id="computerTotal">0</td>
+            </tr>
+          </tfoot>
+        </table>
+        <button id="resetBtn">Reset Game</button>
+  </div>
+  </main>
+  <footer>
+    <div class="copyright">Copyright © <a href="https://www.theodinproject.com/">The Odin Project</a></div>
+    <br>
+    <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by Freepik - Flaticon</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

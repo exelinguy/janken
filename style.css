@@ -1,0 +1,187 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    border-bottom: 2px solid;
+}
+
+.title {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 60px;
+}
+
+.content-wrap {
+  flex-grow: 1;
+}
+
+.input-container {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    margin-left: 5px;
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 2px solid #753dc6;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    color: white;
+    margin-left: 5px;
+    border-radius: 6px;
+    line-height: 1.5;
+    padding: 5px 10px;
+    border: 2px solid #dee1e2;
+    height: 36px;
+    box-shadow: 0 5px 0 #753dc6; /* Darker green for the bottom edge */
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.3); /* Subtle text depth */
+    background: linear-gradient(to bottom, #753dc6 0%, #753d95 100%); /* Gradient for rounding */
+}
+
+button:active {
+    box-shadow: 0 0px 0 #753dc6; /* Shadow disappears on press */
+    transform: translateY(5px); /* Button moves down */
+    transition: all 0.1s ease; /* Smooth transition */
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+
+.scoreTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+table { 
+    border-collapse: collapse; 
+    width: 220px; 
+    margin-top: 20px;
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+}
+
+td, th { 
+    padding: 8px 12px;
+    border: 2px solid #bbb; 
+    text-align: center;
+}
+
+th:nth-child(1), td:nth-child(1) { font-weight: 800; min-width: 70px; }
+th:nth-child(2), td:nth-child(2) { font-weight: 800; min-width: 70px; }
+th:nth-child(3), td:nth-child(3) { font-weight: 800; min-width: 70px; }
+    
+tr.even-row { 
+    background: #a28fbc;
+}
+
+tr.total-row {
+    font-weight: 800;
+}
+
+#gameArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+select {
+    margin-left: 5px;
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 2px solid #753dc6;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+select:focus {
+    outline: none;
+}
+
+select::picker {
+    border: none;
+    appearance: base-select;
+}
+
+option {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+option:first-of-type {
+  border-radius: 8px 8px 0 0;
+  font-size: 14px;
+}
+
+option:last-of-type {
+  border-radius: 0 0 8px 8px;
+}
+
+p {
+    display: flex;
+    gap: 0;
+    margin:0;
+}
+
+#resetBtn {
+    margin-bottom: 40px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 40px 0;
+    border-top: 2px solid black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.copyright {
+    margin-top: 40px;
+}
