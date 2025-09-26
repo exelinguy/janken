@@ -1,11 +1,14 @@
 const Game = (function() {
   // Cached references
+  const rowInputLabel = document.getElementById('rowInputLabel');
   const rowInput = document.getElementById('rowInput');
   const startBtn = document.getElementById('startBtn');
   const errorMsg = document.getElementById('errorMsg');
   const gameArea = document.getElementById('gameArea');
+  const playerChoiceLabel = document.getElementById('playerChoiceLabel');
   const select = document.getElementById('playerChoice');
   const playRoundBtn = document.getElementById('playRoundBtn');
+  const roundTitle = document.getElementById('roundTitle');
   const playerMessage = document.getElementById('playerChoiceMessage');
   const computerMessage = document.getElementById('computerChoiceMessage');
   const roundResultMessage = document.getElementById('roundResultMessage');
@@ -72,10 +75,13 @@ const Game = (function() {
     if (roundNumber >= maxRounds) {
       gameActive = false;
       select.disabled = true;
+      playerChoiceLabel.style.display = 'none';
+      select.style.display = 'none';
       // Clear previous round result messages and play round button
       playRoundBtn.style.display = 'none';
       computerMessage.textContent = "";
       playerMessage.textContent = "";
+      roundTitle.textContent = "";
       roundResultMessage.textContent = "";
       // Declare overall winner
       if (playerTotalScore > computerTotalScore) {
@@ -98,18 +104,22 @@ const Game = (function() {
     if (!playerChoice) {
       playerMessage.textContent = '';
       computerMessage.textContent = '';
+      roundTitle.textContent = '';
       roundResultMessage.textContent = '';
       return;
     }
     if (scoreTable.style.display === "none") {
   scoreTable.style.display = "table";
     }
+    rowInput.style.display = 'none';
     startBtn.style.display= 'none';
     const computerChoice = getComputerChoice();
     const roundResult = getRoundResult(playerChoice, computerChoice);
     const { playerScore, computerScore } = updateScores(roundResult);
 
     roundNumber++;
+    roundTitle.textContent = `Round ${roundNumber} of ${maxRounds}`;
+    roundTitle.style.fontWeight = '800';
     playerMessage.textContent = `You have chosen ${capitalize(playerChoice)}.`;
     computerMessage.textContent = `Computer has chosen ${capitalize(computerChoice)}.`;
     roundResultMessage.textContent = roundResult;
@@ -126,9 +136,10 @@ const Game = (function() {
     gameActive = false;
 
     select.value = '';
-    select.disabled = true;
+    select.style.display = 'none';
     playerMessage.textContent = '';
     computerMessage.textContent = '';
+    roundTitle.textContent = '';
     roundResultMessage.textContent = '';
     overallWinnerMessage.textContent = '';
     playerTotalElem.textContent = '0';
@@ -139,6 +150,8 @@ const Game = (function() {
     playRoundBtn.style.display = 'inline-block';
     scoreTable.style.display = 'none';
     gameArea.style.display = 'none';
+    rowInputLabel.style.display = 'flex';
+    rowInput.style.display = 'flex';
     startBtn.style.display = 'inline-block';
   }
 
@@ -155,11 +168,14 @@ const Game = (function() {
     computerTotalScore = 0;
     gameActive = true;
 
+    playerChoiceLabel.style.display = 'flex';
     select.disabled = false;
+    select.style.display = 'flex';
     select.value = '';
 
     playerMessage.textContent = '';
     computerMessage.textContent = '';
+    roundTitle.textContent = '';
     roundResultMessage.textContent = '';
     overallWinnerMessage.textContent = '';
     playerTotalElem.textContent = '0';
@@ -169,10 +185,15 @@ const Game = (function() {
     gameArea.style.display = 'flex';
     scoreTable.style.display = 'none';
 
+    rowInput.style.display = 'none';
+    startBtn.style.display = 'none';
+    rowInputLabel.style.display = 'none';
+    playerChoiceLabel.style.display = 'flex';
     select.focus();
   }
 
   function init() {
+    rowInput.focus();
     startBtn.addEventListener('click', startGame);
     playRoundBtn.addEventListener('click', playRound); // new event
     resetBtn.addEventListener('click', resetGame);

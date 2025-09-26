@@ -18,13 +18,13 @@
     </header>
     <main class="content-wrap">
     <div class="input-container">
-        <label for="rowInput">Enter number of rounds (1-10):</label>
+        <label for="rowInput" id="rowInputLabel">Enter number of rounds (1-10):</label>
         <input type="number" id="rowInput" min="1" max="10" placeholder="5" required>
         <button id="startBtn">Play !</button>
         <div class="error" id="errorMsg"></div>
     </div>
     <div id="gameArea">
-      <label for="playerChoice">Make your choice:</label>
+      <label for="playerChoice" id="playerChoiceLabel">Make your choice:</label>
       <select id="playerChoice" name="playerChoice" required>
         <option value="">Please Select...</option>
         <option value="rock">Rock</option>
@@ -32,6 +32,9 @@
         <option value="scissors">Scissors</option>
       </select>
       <button id="playRoundBtn">Play Round</button>
+      <p id="roundTitle">
+        <!-- Round number will be shown here dynamically -->
+      </p>
       <p id="playerChoiceMessage">
         <!-- Player choice will be shown here dynamically -->
       </p>
