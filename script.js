@@ -83,7 +83,7 @@ const Game = (function() {
       } else if (computerTotalScore > playerTotalScore) {
         overallWinnerMessage.textContent = '💻 Computer wins the game! 💻';
       } else {
-        overallWinnerMessage.textContent = "It's an overall draw!";
+        overallWinnerMessage.textContent = "🤝 It's an overall draw! 🤝";
       }
       resetBtn.style.display = 'inline-block';
       return true;
