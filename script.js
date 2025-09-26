@@ -104,7 +104,7 @@ const Game = (function() {
     if (scoreTable.style.display === "none") {
   scoreTable.style.display = "table";
     }
-    
+    startBtn.style.display= 'none';
     const computerChoice = getComputerChoice();
     const roundResult = getRoundResult(playerChoice, computerChoice);
     const { playerScore, computerScore } = updateScores(roundResult);
