@@ -140,6 +140,8 @@ td, th {
 th:nth-child(1), td:nth-child(1) { font-weight: 800; min-width: 70px; }
 th:nth-child(2), td:nth-child(2) { font-weight: 800; min-width: 70px; }
 th:nth-child(3), td:nth-child(3) { font-weight: 800; min-width: 70px; }
+th:nth-child(4), td:nth-child(4) { font-weight: 800; min-width: 70px; }
+th:nth-child(5), td:nth-child(5) { font-weight: 800; min-width: 70px; }
     
 tr.even-row { 
     background: #a28fbc;
