@@ -22,6 +22,12 @@ header {
     font-size: 60px;
 }
 
+header span {
+    font-size: 12px;
+    align-self: last baseline;
+    margin-left: -260px;
+}
+
 .content-wrap {
   flex-grow: 1;
 }
@@ -62,6 +68,7 @@ button {
     box-shadow: 0 5px 0 #753dc6; /* Darker green for the bottom edge */
     text-shadow: 0 -1px 0 rgba(0,0,0,0.3); /* Subtle text depth */
     background: linear-gradient(to bottom, #753dc6 0%, #753d95 100%); /* Gradient for rounding */
+    cursor: pointer;
 }
 
 button:active {

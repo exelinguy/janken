@@ -101,7 +101,10 @@ const Game = (function() {
       roundResultMessage.textContent = '';
       return;
     }
-
+    if (scoreTable.style.display === "none") {
+  scoreTable.style.display = "table";
+    }
+    
     const computerChoice = getComputerChoice();
     const roundResult = getRoundResult(playerChoice, computerChoice);
     const { playerScore, computerScore } = updateScores(roundResult);
@@ -132,11 +135,11 @@ const Game = (function() {
     computerTotalElem.textContent = '0';
     resetBtn.style.display = 'none';
 
-    tableBody.innerHTML = '';
-    
-    // Hide the table on reset/game start
+    tableBody.innerHTML = '';    // Hide the table on reset/game start
+    playRoundBtn.style.display = 'inline-block';
     scoreTable.style.display = 'none';
     gameArea.style.display = 'none';
+    startBtn.style.display = 'inline-block';
   }
 
   function startGame() {
@@ -163,10 +166,8 @@ const Game = (function() {
     computerTotalElem.textContent = '0';
     tableBody.innerHTML = '';
     resetBtn.style.display = 'none';
-
-    // Show game area and table only when game starts
     gameArea.style.display = 'flex';
-    scoreTable.style.display = 'table';
+    scoreTable.style.display = 'none';
 
     select.focus();
   }
